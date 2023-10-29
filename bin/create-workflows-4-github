@@ -1,0 +1,12 @@
+#!/usr/bin/env raku
+
+use App::Workflows::Github;
+
+sub MAIN(:$base-dir = $*CWD, Bool :$force=False) {
+	
+	my $cmd =  $*PROGRAM-NAME.IO.basename;
+
+	$base-dir.IO.add("META6.json").e || $force
+	  ?? generate-workflow-files(:$base-dir)
+	  !! note "META6.json not found in $base-dir\nAre you launching $cmd from a Raku Module directory?\nUse '$cmd --force' to create workflows anyway."	
+}

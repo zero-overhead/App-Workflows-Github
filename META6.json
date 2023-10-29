@@ -1,0 +1,32 @@
+{
+  "auth": "zef:zero-overhead",
+  "authors": [
+    "rcmlz"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "a CI/CD workflow collection for Raku Module developers.",
+  "license": "Artistic-2.0",
+  "name": "App::Workflows::Github",
+  "perl": "6.d",
+  "provides": {
+    "App::Workflows::Github": "lib/App/Workflows/Github.rakumod"
+  },
+  "resources": [
+    "runner.tmpl.yml",
+    "dispatch.tmpl.yml",
+    "linux.tmpl.yml",
+    "macos.tmpl.yml",
+    "windows.tmpl.yml",
+    "dispatch-screenshot.png",
+    "run-tests.raku"
+  ],
+  "source-url": "https://github.com/zero-overhead/App-Workflows-Github.git",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.9"
+}
