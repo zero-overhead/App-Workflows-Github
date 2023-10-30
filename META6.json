@@ -25,8 +25,11 @@
   ],
   "source-url": "https://github.com/zero-overhead/App-Workflows-Github.git",
   "tags": [
+    "TEST",
+    "WORKFLOW",
+    "GIT"
   ],
   "test-depends": [
   ],
-  "version": "0.0.9"
+  "version": "0.1.0"
 }
