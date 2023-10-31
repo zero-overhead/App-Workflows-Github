@@ -4,7 +4,7 @@ use App::Workflows::Github;
 
 my Str $tmp = $*TMPDIR.Str;
 
-my @files = <runner dispatch linux macos windows> >>~>> ".yml";
+my @files = <runner dispatch Linux MacOS Windows> >>~>> ".yml";
 
 my IO $out = workflow-dir($tmp);
 my $cmd="raku -I . -- bin/create-workflows-4-github --force --base-dir=$tmp";
@@ -17,5 +17,9 @@ my $script-name = "run-tests.raku";
 ok $tmp.IO.add($script-name).e, $script-name;
 
 ok $out.IO.add($_).e, $_ for @files;
+
+say "Cleaning up";
+say "{$out.IO.add($_)} :" ~ $out.IO.add($_).unlink for @files;
+say "$out :" ~ $out.IO.rmdir;
 
 done-testing;

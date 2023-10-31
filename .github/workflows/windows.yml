@@ -1,5 +1,5 @@
-# save as .github/workflows/windows.yml
-name: windows
+# save as .github/workflows/Windows.yml
+name: Windows
 
 on:
   push:
@@ -8,10 +8,10 @@ on:
           - 'releases/**'
   pull_request:
   schedule: # MIN HOUR DAYOFMONTH MONTH DAYOFWEEK - schedule at least a bi-monthly run - just to keep an eye on long-time-not-touched repositories
-    - cron: '3 8 13 * *'
+    - cron: '36 7 11 * *'
 
 jobs:
-  runner:
+  launch:
     uses: ./.github/workflows/runner.yml
     with:
       os: ${{ github.workflow }}
