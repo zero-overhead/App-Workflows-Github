@@ -8,7 +8,7 @@ on:
           - 'releases/**'
   pull_request:
   schedule: # MIN HOUR DAYOFMONTH MONTH DAYOFWEEK - schedule at least a bi-monthly run - just to keep an eye on long-time-not-touched repositories
-    - cron: '19 7 20 * *'
+    - cron: '11 6 21 * *'
 
 jobs:
   launch:
@@ -20,7 +20,7 @@ jobs:
       verbosity: error
       test_degree: 2
       skip_deps_tests: false
-      run_prove6: ${{ github.event_name == 'pull_request' }}
+      run_prove6: false
       install_module: ${{ github.event_name != 'pull_request' }}
       run_tests_script: ${{ github.event_name == 'pull_request' }}
       
