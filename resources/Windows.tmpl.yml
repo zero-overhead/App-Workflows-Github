@@ -1,5 +1,5 @@
-# save as .github/workflows/windows.yml
-name: windows
+# save as .github/workflows/Windows.yml
+name: Windows
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
     - cron: '@@CRONMINUTES@@ @@CRONHOUR@@ @@CRONDAYOFMONTH@@ * *'
 
 jobs:
-  runner:
+  launch:
     uses: ./.github/workflows/runner.yml
     with:
       os: ${{ github.workflow }}

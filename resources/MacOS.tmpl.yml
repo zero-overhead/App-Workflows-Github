@@ -1,5 +1,5 @@
-# save as .github/workflows/linux.yml
-name: linux
+# save as .github/workflows/MacOS.yml
+name: MacOS
 
 on:
   push:
@@ -11,10 +11,10 @@ on:
     - cron: '@@CRONMINUTES@@ @@CRONHOUR@@ @@CRONDAYOFMONTH@@ * *'
 
 jobs:
-  runner:
+  launch:
     uses: ./.github/workflows/runner.yml
     with:
-      os: ubuntu
+      os: ${{ github.workflow }}
       os_version: latest
       raku_version: latest
       verbosity: error

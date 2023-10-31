@@ -1,7 +1,4 @@
-|push to main|[![Linux Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/linux.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![MacOS Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/macos.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![Windows Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/windows.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions) |
-|---|---|---|---|
-|scheduled run|[![Linux Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/linux.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![MacOS Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/macos.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![Windows Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/windows.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)| 
-|pull request|[![Linux Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/linux.yml/badge.svg?event=pull)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![MacOS Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/macos.yml/badge.svg?event=pull)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![Windows Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/windows.yml/badge.svg?event=pull)](https://github.com/zero-overhead/App-Workflows-Github/actions)|
+|last push to main|[![Linux Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Linux.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![MacOS Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/MacOS.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![Windows Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Windows.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions) | |---|---|---|---| |scheduled health check|[![Linux Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Linux.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![MacOS Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/MacOS.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![Windows Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Windows.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)| 
 
 NAME
 ====
@@ -24,9 +21,9 @@ This will create or overwrite the following files:
 ```bash
 your-module-directory/.github/workflows/runner.yml
 your-module-directory/.github/workflows/dispatch.yml
-your-module-directory/.github/workflows/linux.yml
-your-module-directory/.github/workflows/macos.yml
-your-module-directory/.github/workflows/windows.yml
+your-module-directory/.github/workflows/Linux.yml
+your-module-directory/.github/workflows/MacOS.yml
+your-module-directory/.github/workflows/Windows.yml
 your-module-directory/run-tests.raku
 ```
 

@@ -17,9 +17,9 @@
   "resources": [
     "runner.tmpl.yml",
     "dispatch.tmpl.yml",
-    "linux.tmpl.yml",
-    "macos.tmpl.yml",
-    "windows.tmpl.yml",
+    "Linux.tmpl.yml",
+    "MacOS.tmpl.yml",
+    "Windows.tmpl.yml",
     "dispatch-screenshot.png",
     "run-tests.raku"
   ],
@@ -31,5 +31,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
