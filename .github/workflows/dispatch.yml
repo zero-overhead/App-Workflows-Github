@@ -7,7 +7,7 @@ on:
     inputs:
       os:
         description: Operating System to run on
-        required: false
+        required: true
         default: ubuntu
         type: choice
         options: 
@@ -35,13 +35,12 @@ on:
         - info
         - verbose
         - debug
-      test_degree:
-        description: zef test degree
-        required: true
-        default: 2
+      ad_hoc_pre_command:
+        description: ad-hoc-pre command
+        required: false
         type: string
-      ad_hoc_command:
-        description: final ad-hoc command
+      ad_hoc_post_command:
+        description: ad-hoc-post command
         required: false
         type: string
       skip_deps_tests:
@@ -66,7 +65,7 @@ on:
         type: boolean
 
 jobs:
-  runner:
+  launch:
     uses: ./.github/workflows/runner.yml
     with:
       os: ${{ inputs.os }}
@@ -76,6 +75,6 @@ jobs:
       skip_deps_tests: ${{ inputs.skip_deps_tests }}
       run_prove6: ${{ inputs.run_prove6 }}
       install_module: ${{ inputs.install_module }}
-      test_degree: ${{ inputs.test_degree }}
       run_tests_script: ${{ inputs.run_tests_script }}
-      ad_hoc_command: ${{ inputs.ad_hoc_command }}
+      ad_hoc_pre_command: ${{ inputs.ad_hoc_pre_command }}
+      ad_hoc_post_command: ${{ inputs.ad_hoc_post_command }}
