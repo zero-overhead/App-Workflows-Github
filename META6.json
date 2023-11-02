@@ -3,6 +3,9 @@
   "authors": [
     "rcmlz"
   ],
+  "test-depends": [
+    "Test"
+  ],
   "build-depends": [
   ],
   "depends": [
@@ -29,7 +32,5 @@
     "WORKFLOW",
     "GIT"
   ],
-  "test-depends": [
-  ],
-  "version": "0.1.2"
+  "version": "0.1.3"
 }

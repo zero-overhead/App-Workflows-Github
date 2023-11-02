@@ -1,5 +1,7 @@
 Revision history for App-Workflows-Github
 
+0.1.3
+    - changing runner defaults
 0.1.0
     - adding tags to META6.json
 0.0.9

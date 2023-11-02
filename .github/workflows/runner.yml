@@ -37,7 +37,7 @@ on:
       run_tests_script:
         description: run-tests.raku
         required: false
-        default: true
+        default: false
         type: boolean
       install_module:
         description: install module
