@@ -1,4 +1,4 @@
-unit class App::Workflows::Github:ver<0.1.1>:auth<github:rcmlz>:api<1>;
+unit class App::Workflows::Github:ver<0.1.4>:auth<github:rcmlz>:api<1>;
 
 sub generate-workflow-files(IO(Str) :$base-dir) is export {
 
@@ -13,8 +13,8 @@ sub generate-workflow-files(IO(Str) :$base-dir) is export {
 	  for @files -> $f {
 
 		my %mapping =
-			CRONMINUTES => (0..59).rand.Int,
-			CRONHOUR => (0..23).rand.Int,
+			CRONMINUTES => (1..59).rand.Int,
+			CRONHOUR => (1..23).rand.Int,
 			CRONDAYOFMONTH => (1..28).rand.Int;
 
 		my $content = %?RESOURCES{"$f.tmpl.yml"}.slurp;
@@ -84,18 +84,23 @@ Then do the usual three git steps to push the changes to github.
 
 =begin code :lang<bash>
 git add .github/workflows/
+git add run-tests.raku
+
 git commit -m"adding github workflows"
+
 git push
 =end code
 
 Open https://github.com/your-name/your-module/actions to check the workflow results.
 
-To dispatch a workflow run using CLI [gh](https://cli.github.com/manual/) do
+To [dispatch a workflow run](https://cli.github.com/manual/gh_workflow_run) using [gh](https://cli.github.com/manual/) CLI use e.g.
 
 =begin code :lang<bash>
 cd your-module-directory
 
-gh workflow run 'dispatch' --ref branch-to-run-on -f verbosity=debug -f os=windows -f run_prove6=true -f install_module=true -f skip_deps_tests=false
+echo '{"verbosity":"debug", "os":"windows", "ad_hoc_pre_command":"pwd", "ad_hoc_post_command":"ls -alsh", "os_version":"2019", "raku_version":"2023.02", "run_prove6":"true", "install_module":"true", "run_tests_script":"true", "skip_deps_tests":"false"}' > run_parameters.json
+cat run_parameters.json | gh workflow run 'dispatch' --ref branch-to-run-on --json
+
 =end code
 
 For 'os' you can choose any of 'ubuntu|macos|ubuntu'. Use https://github.com/your-name/your-module/actions/workflows/dispatch.yml to launch a run from the webbrowser.
