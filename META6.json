@@ -1,10 +1,8 @@
 {
+  "api": "1.0",
   "auth": "zef:zero-overhead",
   "authors": [
     "rcmlz"
-  ],
-  "test-depends": [
-    "Test"
   ],
   "build-depends": [
   ],
@@ -32,5 +30,8 @@
     "WORKFLOW",
     "GIT"
   ],
-  "version": "0.1.3"
+  "test-depends": [
+    "Test"
+  ],
+  "version": "0.1.4"
 }
