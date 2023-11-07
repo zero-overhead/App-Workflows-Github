@@ -15,12 +15,12 @@ on:
         - macos
         - windows
       os_version:
-        description: "OS version: latest, 20.04, 13, 2019 etc."
+        description: OS version (latest 20.04 13 2019)
         required: true
         default: latest
         type: string
       raku_version:
-        description: "Raku version: latest, 2023.02 etc."
+        description: Raku version (latest 2023.02)
         required: true
         default: latest
         type: string
