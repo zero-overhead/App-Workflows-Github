@@ -63,16 +63,16 @@ jobs:
 
     if: ${{ inputs.os == 'windows' }}
     env:
-      ZEF_CONFIG_TEMPDIR: D:/T
-      TEMP: D:/T
-      TMP: D:/T
+      ZEF_CONFIG_TEMPDIR: D:\T
+      TEMP: D:\T
+      TMP: D:\T
 
     steps:
 
     # saving a few characters on the default C:\Users\RUNNER~1\AppData\Local\Temp to circumvent the max path length limit of Windows
     - name: Windows TMP dir
       if: ${{ inputs.os == 'windows' }}
-      run: mkdir ${{ env.zef_test_degree }}
+      run: mkdir "${{ env.zef_test_degree }}"
 
     - uses: Raku/setup-raku@v1
       with:
