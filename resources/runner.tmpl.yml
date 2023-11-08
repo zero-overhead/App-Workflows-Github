@@ -60,15 +60,15 @@ jobs:
     env:
       zef_fetch_degree: 4
       zef_test_degree: 2
-      if: ${{ inputs.os == 'windows' }}
-        ZEF_CONFIG_TEMPDIR: d:/T
 
     steps:
 
     # saving a few characters on the default C:\Users\RUNNER~1\AppData\Local\Temp to circumvent the max path length limit of Windows
-    - name: Set TMP dir
+    - name: Windows TMP dir
       if: ${{ inputs.os == 'windows' }}
-      run: mkdir "d:/T"
+      run: |
+        echo "{ZEF_CONFIG_TEMPDIR}={d:/T}" >> $GITHUB_ENV
+        mkdir "d:/T"
 
     - uses: Raku/setup-raku@v1
       with:
