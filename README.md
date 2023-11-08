@@ -31,11 +31,11 @@ Finaly execute the following commands:
 ```bash
 cd your-module-directory
 create-workflows-4-github
-=begin code :lang<bash>
+```
 
 This will create or overwrite the following files:
 
-=begin code :lang<bash>
+```bash
 your-module-directory/.github/workflows/runner.yml
 your-module-directory/.github/workflows/dispatch.yml
 your-module-directory/.github/workflows/Linux.yml

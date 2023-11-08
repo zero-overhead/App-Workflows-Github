@@ -82,7 +82,7 @@ Finaly execute the following commands:
 =begin code :lang<bash>
 cd your-module-directory
 create-workflows-4-github
-=begin code :lang<bash>
+=end code
 
 This will create or overwrite the following files:
 
