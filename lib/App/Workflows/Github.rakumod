@@ -63,9 +63,24 @@ App::Workflows::Github - a CI/CD workflow collection for Raku Module developers.
 
 =begin code :lang<bash>
 zef install App::Workflows::Github
+=end code
 
+If you are on Windows, please switch of the [maximum-path-length-limitation](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#maximum-path-length-limitation). You might get away by setting temporarily a very short TMP directory prior to installation
+
+=begin code :lang<bash>
+set TEMP=D:\T
+
+mkdir -Force %TEMP%
+set TMP=%TEMP%
+set ZEF_CONFIG_TEMPDIR=%TEMP%
+
+zef install App::Workflows::Github
+=end code
+
+Finaly execute the following commands:
+
+=begin code :lang<bash>
 cd your-module-directory
-
 create-workflows-4-github
 =end code
 
