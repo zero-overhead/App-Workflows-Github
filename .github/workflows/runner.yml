@@ -56,12 +56,6 @@ on:
 env:
   zef_fetch_degree: 4
   zef_test_degree: 2
-  # saving a few characters on the default C:\Users\RUNNER~1\AppData\Local\Temp trying to avoid the 260 chars
-  # max path length limit of Windows
-  # https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#maximum-path-length-limitation
-  TMP: ${{ inputs.os == 'windows' && 'D:\T' || '/tmp' }}
-  ZEF_CONFIG_TEMPDIR: ${{ inputs.os == 'windows' && 'D:\T' || '/tmp' }}
-  TEMP: ${{ inputs.os == 'windows' && 'D:\T' || '/tmp' }}
 
 jobs:
   runner:
@@ -70,7 +64,7 @@ jobs:
 
     - name: Windows - creating shortest possible TMP dir
       if: ${{ inputs.os == 'windows' }}
-      run: mkdir -Force "${{ env.ZEF_CONFIG_TEMPDIR }}"
+      run: New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
 
     - uses: Raku/setup-raku@v1
       with:
