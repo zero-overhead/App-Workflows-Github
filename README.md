@@ -14,7 +14,7 @@ SYNOPSIS
 zef install App::Workflows::Github
 ```
 
-If you are on Windows, please switch off the [maximum-path-length-limitation](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell). You might get away with temporaily setting TEMP to a short path.
+If you are on Windows, please switch off the [maximum-path-length-limitation](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell). You might get away with temporarily setting TEMP to a short path.
 
 ```PowerShell
 New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
