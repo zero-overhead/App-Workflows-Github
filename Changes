@@ -1,5 +1,7 @@
 Revision history for App-Workflows-Github
 
+0.1.7
+    - Fixing Windows Path Length Limits for TMP
 0.1.3
     - changing runner defaults
 0.1.0
