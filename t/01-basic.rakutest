@@ -1,5 +1,5 @@
 use Test;
-use lib ".";
+use lib 'lib';
 use App::Workflows::Github;
 
 my Str $tmp = $*TMPDIR.Str;
