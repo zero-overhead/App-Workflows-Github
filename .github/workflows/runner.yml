@@ -61,12 +61,16 @@ jobs:
   runner:
     runs-on: ${{ inputs.os }}-${{ inputs.os_version }}
 
-    # saving a few characters on the default C:\Users\RUNNER~1\AppData\Local\Temp trying to avoid the max path length limit of Windows
+    # saving a few characters on the default C:\Users\RUNNER~1\AppData\Local\Temp trying to avoid the 260 chars
+    # max path length limit of Windows
+    # https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#maximum-path-length-limitation
     if: ${{ inputs.os == 'windows' }}
     env:
       ZEF_CONFIG_TEMPDIR: D:\T
       TEMP: D:\T
       TMP: D:\T
+
+    if: ${{ true }}
 
     steps:
 

@@ -70,6 +70,8 @@ jobs:
       TEMP: D:\T
       TMP: D:\T
 
+    if: ${{ true }}
+
     steps:
 
     - name: Windows - creating shortest possible TMP dir
