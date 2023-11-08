@@ -64,8 +64,8 @@ jobs:
     if: ${{ inputs.os == 'windows' }}
     env:
       ZEF_CONFIG_TEMPDIR: D:/T
-      TEMP: ${{ env.zef_test_degree }}
-      TMP: ${{ env.zef_test_degree }}
+      TEMP: D:/T
+      TMP: D:/T
 
     steps:
 
