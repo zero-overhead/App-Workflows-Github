@@ -65,7 +65,7 @@ App::Workflows::Github - a CI/CD workflow collection for Raku Module developers.
 zef install App::Workflows::Github
 =end code
 
-If you are on Windows, please switch of the [maximum-path-length-limitation](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell). You might get away with temporaily setting TEMP to a short path.
+If you are on Windows, please switch off the [maximum-path-length-limitation](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell). You might get away with temporaily setting TEMP to a short path.
 
 =begin code :lang<PowerShell>
 New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
