@@ -67,7 +67,9 @@ jobs:
     - name: Windows TMP dir
       if: ${{ inputs.os == 'windows' }}
       run: |
-        echo "ZEF_CONFIG_TEMPDIR=D:/T" >> $GITHUB_ENV
+        echo "TEMP=D:/T" >> "$GITHUB_ENV"
+        echo "TMP=D:/T" >> "$GITHUB_ENV"
+        echo "ZEF_CONFIG_TEMPDIR=D:/T" >> "$GITHUB_ENV"
         mkdir "d:/T"
 
     - uses: Raku/setup-raku@v1
