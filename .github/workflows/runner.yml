@@ -70,7 +70,7 @@ jobs:
 
     - name: Windows - creating shortest possible TMP dir
       if: ${{ inputs.os == 'windows' }}
-      run: mkdir "${{ env.ZEF_CONFIG_TEMPDIR }}"
+      run: mkdir -Force "${{ env.ZEF_CONFIG_TEMPDIR }}"
 
     - uses: Raku/setup-raku@v1
       with:
