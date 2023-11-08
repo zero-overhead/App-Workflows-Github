@@ -60,10 +60,8 @@ jobs:
     env:
       zef_fetch_degree: 4
       zef_test_degree: 2
-
-    if: ${{ inputs.os == 'windows' }}
-    env:
-      ZEF_CONFIG_TEMPDIR: d:/T
+      if: ${{ inputs.os == 'windows' }}
+        ZEF_CONFIG_TEMPDIR: d:/T
 
     steps:
 
