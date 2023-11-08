@@ -69,8 +69,10 @@ If you are on Windows, please switch of the [maximum-path-length-limitation](htt
 
 =begin code :lang<bash>
 set TEMP=D:\T
-set TMP=%TEMP%
+
 mkdir -Force %TEMP%
+set TMP=%TEMP%
+set ZEF_CONFIG_TEMPDIR=%TEMP%
 
 zef install App::Workflows::Github
 =end code
