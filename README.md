@@ -16,10 +16,10 @@ cd your-module-directory
 create-workflows-4-github
 ```
 
-[![last version](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges/version)](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges) [![downloads](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges/downloads)](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges)
-
 DESCRIPTION
 ===========
+
+[![last version](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges/version)](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges) [![downloads](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges/downloads)](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges)
 
 App::Workflows::Github is collecting Github workflows for testing your [Module](https://raku.land) on Linux, MacOS and Windows.
 
@@ -47,7 +47,7 @@ Linux/MacOS/Windows install module command:
 zef install App::Workflows::Github
 ```
 
-Finaly execute the following commands:
+Finally execute the following commands:
 
 ```bash
 cd your-module-directory
