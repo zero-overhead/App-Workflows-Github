@@ -51,9 +51,11 @@ sub workflow-dir(IO(Str) $base) is export {
 
 =begin pod
 
-|last push to main|[![Linux Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Linux.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![MacOS Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/MacOS.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![Windows Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Windows.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions) | 
-|---|---|---|---| 
-|scheduled health check|[![Linux Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Linux.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![MacOS Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/MacOS.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![Windows Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Windows.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)| 
+|last push|[![Linux Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Linux.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![MacOS Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/MacOS.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![Windows Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Windows.yml/badge.svg?event=push)](https://github.com/zero-overhead/App-Workflows-Github/actions)|
+
+|---|---|---|---|
+
+|scheduled check|[![Linux Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Linux.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![MacOS Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/MacOS.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)|[![Windows Status](https://github.com/zero-overhead/App-Workflows-Github/actions/workflows/Windows.yml/badge.svg?event=schedule)](https://github.com/zero-overhead/App-Workflows-Github/actions)|
 
 =head1 NAME
 
@@ -63,19 +65,37 @@ App::Workflows::Github - a CI/CD workflow collection for Raku Module developers.
 
 =begin code :lang<bash>
 zef install App::Workflows::Github
+cd your-module-directory
+create-workflows-4-github
 =end code
 
-If you are on Windows, please switch off the [maximum-path-length-limitation](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell). You might get away with temporarily setting TEMP to a short path.
+[![last version](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges/version)](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges) [![downloads](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges/downloads)](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges)
+
+=head1 DESCRIPTION
+
+App::Workflows::Github is collecting Github workflows for testing your [Module](https://raku.land) on Linux, MacOS and Windows.
+
+Scheduled workflows only run automatically on github if the .yml files are pushed to the default branch - usually 'main'.
+
+If you are using Windows: consider switching off the [maximum-path-length-limitation](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell).
 
 =begin code :lang<PowerShell>
 New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+=end code
 
+You might get away with temporarily setting TEMP to a short path.
+
+=begin code :lang<PowerShell>
 set TEMP=D:\T
 
 mkdir -Force %TEMP%
 set TMP=%TEMP%
 set ZEF_CONFIG_TEMPDIR=%TEMP%
+=end code
 
+Linux/MacOS/Windows install module command:
+
+=begin code :lang<bash>
 zef install App::Workflows::Github
 =end code
 
@@ -108,8 +128,6 @@ git commit -m"adding github workflows"
 git push
 =end code
 
-Open https://github.com/your-name/your-module/actions to check the workflow results.
-
 To [dispatch a workflow run](https://cli.github.com/manual/gh_workflow_run) using [gh](https://cli.github.com/manual/) CLI use e.g.
 
 =begin code :lang<bash>
@@ -120,17 +138,11 @@ cat run_parameters.json | gh workflow run 'dispatch' --ref branch-to-run-on --js
 
 =end code
 
-For 'os' you can choose any of 'ubuntu|macos|ubuntu'. Use https://github.com/your-name/your-module/actions/workflows/dispatch.yml to launch a run from the webbrowser.
+For 'os' you can choose any of 'ubuntu|macos|ubuntu'. For 'os_version' check [supported-runners-and-hardware-resources](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources). For available 'raku_version' check [here](https://www.rakudo.org/downloads/rakudo).
 
 ![screenshot of dispatch menu](https://github.com/zero-overhead/App-Workflows-Github/blob/main/resources/dispatch-screenshot.png?raw=true)
 
-=head1 DESCRIPTION
-
-App::Workflows::Github is collecting Github workflows for testing your [Module](https://raku.land) on Linux, MacOS and Windows.
-
-Scheduled workflows only run automatically on github if the .yml files are pushed to the default branch - usually 'main'.
-
-[![last version](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges/version)](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges) [![downloads](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges/downloads)](https://raku.land/zef:zero-overhead/App::Workflows::Github/badges)
+Open https://github.com/your-name/your-module/actions to check the workflow results or dispatch a run via browser.
 
 =head1 AUTHOR
 
