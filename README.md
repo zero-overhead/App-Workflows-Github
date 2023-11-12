@@ -25,7 +25,10 @@ App::Workflows::Github is collecting Github workflows for testing your [Module](
 
 Scheduled workflows only run automatically on github if the .yml files are pushed to the default branch - usually 'main'.
 
-If you are using Windows: consider switching off the [maximum-path-length-limitation](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell).
+Microsoft Windows
+-----------------
+
+If you are on [Windows](https://learn.microsoft.com/en-us/linux/install) and can not use [WSL](https://learn.microsoft.com/en-us/windows/wsl/): consider switching off the [maximum-path-length-limitation](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell) in case of failed tests during installation.
 
 ```PowerShell
 New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
@@ -40,6 +43,9 @@ mkdir -Force %TEMP%
 set TMP=%TEMP%
 set ZEF_CONFIG_TEMPDIR=%TEMP%
 ```
+
+Installation
+------------
 
 Linux/MacOS/Windows install module command:
 
@@ -75,6 +81,9 @@ git commit -m"adding github workflows"
 
 git push
 ```
+
+Workflow Dispatch
+-----------------
 
 To [dispatch a workflow run](https://cli.github.com/manual/gh_workflow_run) using [gh](https://cli.github.com/manual/) CLI use e.g.
 
