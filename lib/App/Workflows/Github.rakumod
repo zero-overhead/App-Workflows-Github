@@ -144,7 +144,7 @@ cat run_parameters.json | gh workflow run 'dispatch' --ref branch-to-run-on --js
 
 =end code
 
-For 'os' you can choose any of 'ubuntu|macos|ubuntu'. For 'os_version' check [supported-runners-and-hardware-resources](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources). For available 'raku_version' check [here](https://www.rakudo.org/downloads/rakudo).
+For 'os' you can choose any of 'ubuntu|macos|windows'. For 'os_version' check [supported-runners-and-hardware-resources](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources). For available 'raku_version' check [here](https://www.rakudo.org/downloads/rakudo).
 
 ![screenshot of dispatch menu](https://github.com/zero-overhead/App-Workflows-Github/blob/main/resources/dispatch-screenshot.png?raw=true)
 

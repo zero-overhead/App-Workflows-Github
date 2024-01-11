@@ -1,5 +1,5 @@
 {
-  "api": "v1",
+  "api": "1",
   "auth": "zef:zero-overhead",
   "authors": [
     "rcmlz"
@@ -34,5 +34,5 @@
     "Test",
     "Test::META"
   ],
-  "version": "0.2.2"
+  "version": "0.2.3"
 }
