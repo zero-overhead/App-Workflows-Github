@@ -6,7 +6,7 @@ say run(<raku --version>, :out).out.slurp.chomp;
 say "Running on $*DISTRO.gist().\n";
 
 say "Testing {
-    "dist.ini".IO.lines.head.substr(7)
+    "dist.ini".IO.lines.head.substr(7) if "dist.ini".IO.f;
 }{
     " including author tests" if $author
 }";
