@@ -1,5 +1,7 @@
 Revision history for App-Workflows-Github
 
+0.2.4.
+    - fixing run-tests.raku to work also in non MI6 repos
 0.2.3
     - typos
 0.2.1
