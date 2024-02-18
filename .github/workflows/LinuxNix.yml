@@ -1,0 +1,23 @@
+# save as .github/workflows/LinuxNix.yml
+name: LinuxNix
+
+on:
+  push:
+    branches:
+          - main
+          - master
+          - 'releases/**'
+  pull_request:
+jobs:
+  launch:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: cachix/install-nix-action@v25
+      with:
+        nix_path: nixpkgs=channel:nixos-stable
+    - run: nix-build
+    - name: Setup Raku
+      run: nix-shell -p rakudo nqp moarvm perl zef stdenv zlib openssl cacert git curl wget
+    - name: Install Libraries
+        zef --debug install LibraryMake
