@@ -105,7 +105,7 @@ jobs:
       run: |
         zef install --/test --fetch-degree=${{ env.zef_fetch_degree }} --test-degree=${{ env.zef_test_degree }} App::Prove6
         prove6 --version
-        prove6 --jobs ${{ env.zef_test_degree }} --lib --timer --verbose
+        prove6 --jobs ${{ env.zef_test_degree }} --timer --verbose
 
     - name: Ad-hoc post command
       if: ${{ inputs.ad_hoc_post_command }}
