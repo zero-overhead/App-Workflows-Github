@@ -71,7 +71,7 @@ in
         zef update
         
         echo installing all Raku modules listed in jupyter-chatbook-modules.txt from https://raku.land using zef
-        cat jupyter-chatbook-modules.txt | raku -e 'for $*IN.lines.grep(/^^\w/) { say shell "zef --serial --debug install \"$_\"" }'
+        cat raku-modules.txt | raku -e 'for $*IN.lines.grep(/^^\w/) { say shell "zef --serial --debug install \"$_\"" }'
       
         echo "Creating Raku kernel in path: '$JUPYTER_KERNEL_DIR'"
         jupyter-chatbook-raku --generate-config --location=$JUPYTER_KERNEL_DIR
