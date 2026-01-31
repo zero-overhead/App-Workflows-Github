@@ -33,10 +33,13 @@
       echo including $HOME/.raku/bin in PATH
       export PATH="$HOME/.raku/bin:$PATH"
 
-      echo installing this module
-      cat zef --debug install .      
+      echo installing dependenciees of current module
+      zef install --debug --deps-only .
+
+      echo installing current module
+      zef install --debug .
 
       echo installing all Raku modules listed in jupyter-chatbook-modules.txt from https://raku.land using zef
-      cat raku-modules.txt | raku -e 'for $*IN.lines.grep(/^^\w/) { say shell "zef --serial --debug install \"$_\"" }'      
+      cat raku-modules.txt | raku -e 'for $*IN.lines.grep(/^^\w/) { say shell "zef install --serial --debug \"$_\"" }'      
     '';    
 }
