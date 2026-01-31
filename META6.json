@@ -22,7 +22,9 @@
     "MacOS.tmpl.yml",
     "Windows.tmpl.yml",
     "dispatch-screenshot.png",
-    "run-tests.raku"
+    "run-tests.raku",
+    "NixOS.tmpl.yml",
+    "shell.nix"
   ],
   "source-url": "https://github.com/zero-overhead/App-Workflows-Github.git",
   "tags": [
@@ -34,5 +36,5 @@
     "Test",
     "Test::META"
   ],
-  "version": "0.2.4"
+  "version": "0.3.0"
 }
