@@ -1,2 +1,0 @@
-SVG::Plot
-JSON::Fast
