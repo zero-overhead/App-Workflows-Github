@@ -48,14 +48,15 @@ your-module-directory/.github/workflows/dispatch.yml
 your-module-directory/.github/workflows/Linux.yml
 your-module-directory/.github/workflows/MacOS.yml
 your-module-directory/.github/workflows/Windows.yml
+your-module-directory/.github/workflows/NixOS.yml
 your-module-directory/run-tests.raku
+your-module-directory/shell.nix
 ```
 
 Then do the usual three git steps to push the changes to github.
 
 ```bash
-git add .github/workflows/
-git add run-tests.raku
+git add .github/workflows/ run-tests.raku shell.nix
 
 git commit -m"adding github workflows"
 
