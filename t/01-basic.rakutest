@@ -4,7 +4,7 @@ use App::Workflows::Github;
 
 my Str $tmp = $*TMPDIR.Str;
 
-my @files = <runner dispatch Linux MacOS Windows> >>~>> ".yml";
+my @files = <runner dispatch Linux MacOS Windows NixOS> >>~>> ".yml";
 
 my IO $out = workflow-dir($tmp);
 my $cmd="raku -I . -- bin/create-workflows-4-github --force --base-dir=$tmp";
