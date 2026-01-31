@@ -16,5 +16,5 @@ jobs:
     - uses: cachix/install-nix-action@v31
       with:
         nix_path: nixpkgs=channel:nixos-unstable
-    - run: nix-shell -p rakudo zef git curl wget gcc gnumake readline zlib openssl cacert zeromq --run "zef --debug install LibraryMake:auth<zef:jjmerelo>"
-    - run: nix-shell -p rakudo zef git curl wget gcc gnumake readline zlib openssl cacert zeromq --run "zef --debug install Jupyter::Chatbook:auth<zef:antononcube>"
+    #- run: nix-shell -p rakudo zef git curl wget gcc gnumake readline zlib openssl cacert zeromq --run "zef --debug install LibraryMake:auth<zef:jjmerelo>"
+    - run: nix-shell demo.nix --run "echo NixOS workflow executed"
