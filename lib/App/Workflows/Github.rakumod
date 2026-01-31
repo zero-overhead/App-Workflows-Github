@@ -2,7 +2,7 @@ unit class App::Workflows::Github:ver<0.1.4>:auth<github:rcmlz>:api<1>;
 
 sub generate-workflow-files(IO(Str) :$base-dir) is export {
 
-	my @files = <runner dispatch Linux MacOS Windows>;
+	my @files = <runner dispatch Linux MacOS Windows NixOS>;
 
 	my IO $out = workflow-dir($base-dir);
 
@@ -38,11 +38,12 @@ sub generate-workflow-files(IO(Str) :$base-dir) is export {
 		}
 	}
 
-	# copy test script
-	my $script-name = "run-tests.raku";
-	my $script-path = $base-dir.add($script-name);
-	say "$script-path" if %?RESOURCES{"run-tests.raku"}.copy($script-path);
+	# copy other files
+	for <run-tests.raku shell.nix> -> $script-name {
+		my $script-path = $base-dir.add($script-name);
+		say "$script-path" if %?RESOURCES{$script-name}.copy($script-path);
 
+	}
 }
 
 sub workflow-dir(IO(Str) $base) is export {
